@@ -47,11 +47,11 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
           {/* Button to convert text to uppercase */}
-          <button className="btn btn-primary me-4 my-2" onClick={handleUpClick}>
+          <button className="btn btn-outline-primary me-4 my-2" onClick={handleUpClick}>
             Convert to Uppercase
           </button>
           {/* Button to convert text to lowercase */}
-          <button className="btn btn-primary me-4 my-2" onClick={handleDnClick}>
+          <button className="btn btn-outline-primary me-4 my-2" onClick={handleDnClick}>
             Convert to Lowercase
           </button>
         </div>
