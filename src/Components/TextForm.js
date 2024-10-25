@@ -69,8 +69,13 @@ export default function TextForm(props) {
           {/* Display character count */}
           Characters count: {text.length} <br />
           {/* Estimate reading time based on average reading speed */}
-          Minutes Read:{" "}
-          {0.008 * text.split(" ").filter((word) => word.length > 0).length}
+          Reading Time:{" "}
+          {(() => {
+            const words = text.split(" ").filter((word) => word.length > 0).length;
+            const minutes = Math.floor(words * 0.008);
+            const seconds = Math.round((words * 0.008 - minutes) * 60);
+            return `${minutes} min${minutes !== 1 ? 's' : ''} ${seconds} sec${seconds !== 1 ? 's' : ''}`;
+          })()}
         </p>
         <h3>Preview:</h3>
         {/* Display the current text as a preview */}
